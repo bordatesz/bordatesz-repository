@@ -3,6 +3,9 @@
  */
 package hu.thesis.timetableplanner.test;
 
+import static org.junit.Assert.*;
+import hu.thesis.timetableplanner.entity.Occupation;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -20,7 +23,6 @@ public class GenerateDatabaseTest {
 
 	private EntityManagerFactory emf;
     private EntityManager em;
-    //JPAQuery query;
     private String PERSISTENCE_UNIT_NAME = "jpatest";
 	
 	/*
@@ -45,7 +47,10 @@ public class GenerateDatabaseTest {
 	
 	@Test
 	public void testVoid(){
-		
+		Occupation testOccup = new Occupation();
+		testOccup.setName("ASD");
+		em.persist(testOccup);
+		assertEquals(new Long(1), testOccup.getId());
 	}
 
 	private void initEntityManager() {

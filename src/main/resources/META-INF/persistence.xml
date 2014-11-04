@@ -5,12 +5,22 @@
     <persistence-unit name="jpatest" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>hu.thesis.timetableplanner.entity.BaseEntity</class>
-    <properties>
-      <property name="hibernate.connection.username" value="root"/>
+    <class>hu.thesis.timetableplanner.entity.Course</class>
+    <class>hu.thesis.timetableplanner.entity.CourseOfSpecialisation</class>
+    <class>hu.thesis.timetableplanner.entity.Department</class>
+    <class>hu.thesis.timetableplanner.entity.Lecturer</class>
+    <class>hu.thesis.timetableplanner.entity.Major</class>
+    <class>hu.thesis.timetableplanner.entity.Need</class>
+    <class>hu.thesis.timetableplanner.entity.Occupation</class>
+    <class>hu.thesis.timetableplanner.entity.Specialisation</class>
+    <class>hu.thesis.timetableplanner.entity.Teach</class>
+    <properties>      
       <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-      <property name="hibernate.connection.password" value="root"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>      
       <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/jpatest"/>
-      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="hibernate.connection.username" value="root"/>
+      <property name="hibernate.connection.password" value=""/>      
       <property name="hibernate.hbm2ddl.auto" value="update"/>
       <property name="show_sql" value="true"/>
     </properties>
